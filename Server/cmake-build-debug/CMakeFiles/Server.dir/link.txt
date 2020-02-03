@@ -1,0 +1,1 @@
+/usr/bin/g++-9  -g   CMakeFiles/Server.dir/main.cpp.o  -o Server  /usr/lib/libboost_system.a /usr/lib/libboost_thread.a -lpthread 
