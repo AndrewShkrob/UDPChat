@@ -34,13 +34,21 @@ namespace states {
             strings::error::cannot_join_room_not_connected(out());
         }
 
-        virtual void view_rooms() = 0;
+        virtual void view_rooms() override {
+            strings::error::cannot_view_rooms_not_connected(out());
+        }
 
-        virtual void invite_message(const std::string &username) = 0;
+        virtual void invite_messaging(const std::string &username) override {
+            strings::error::cannot_invite_messaging_not_connected(out());
+        }
 
-        virtual void accept_message(const std::string &username) = 0;
+        virtual void accept_messaging(const std::string &username) override {
+            strings::error::cannot_accept_messaging_not_connected(out());
+        }
 
-        virtual void view_users() = 0;
+        virtual void view_users() override {
+            strings::error::cannot_view_users_not_connected(out());
+        }
 
         void send_message(const std::string &message) override {
             strings::error::cannot_send_message_not_connected(out());

@@ -34,10 +34,10 @@ namespace strings {
             "    example: /join_room room1 1234\n"
             "             /join_room room2\n"
             "/rooms - all rooms, available on the server\n"
-            "/invite_message [username] - sends invite to user to start chatting\n"
-            "    example: /invite_message user2\n"
-            "/accept_message [username] - accepts invite from username\n"
-            "    example: /accept_message user1\n"
+            "/invite_messaging [username] - sends invite to user to start chatting\n"
+            "    example: /invite_messaging user2\n"
+            "/accept_messaging [username] - accepts invite from username\n"
+            "    example: /accept_messaging user1\n"
             "/users - all users, connected to the server\n"
             "/exit - exit from the server and close the application"
             "\033[0m\n";
@@ -55,6 +55,26 @@ namespace strings {
 
         void cannot_join_room_not_connected(std::ostream &out) {
             out << strings::colors::red << "Cannot join room. You are not connected to the server"
+                << strings::colors::def << std::endl;
+        }
+
+        void cannot_view_rooms_not_connected(std::ostream &out) {
+            out << strings::colors::red << "Cannot view rooms. You are not connected to the server"
+                << strings::colors::def << std::endl;
+        }
+
+        void cannot_invite_messaging_not_connected(std::ostream &out) {
+            out << strings::colors::red << "Cannot invite messaging. You are not connected to the server"
+                << strings::colors::def << std::endl;
+        }
+
+        void cannot_accept_messaging_not_connected(std::ostream &out) {
+            out << strings::colors::red << "Cannot accept messaging. You are not connected to the server"
+                << strings::colors::def << std::endl;
+        }
+
+        void cannot_view_users_not_connected(std::ostream &out) {
+            out << strings::colors::red << "Cannot view users. You are not connected to the server"
                 << strings::colors::def << std::endl;
         }
 
