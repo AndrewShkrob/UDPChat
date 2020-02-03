@@ -43,43 +43,46 @@ namespace strings {
             "\033[0m\n";
 
     namespace error {
+
+        namespace not_connected {
+            void cannot_create_room(std::ostream &out) {
+                out << strings::colors::red << "Cannot create room. You are not connected to the server"
+                    << strings::colors::def << std::endl;
+            }
+
+            void cannot_join_room(std::ostream &out) {
+                out << strings::colors::red << "Cannot join room. You are not connected to the server"
+                    << strings::colors::def << std::endl;
+            }
+
+            void cannot_view_rooms(std::ostream &out) {
+                out << strings::colors::red << "Cannot view rooms. You are not connected to the server"
+                    << strings::colors::def << std::endl;
+            }
+
+            void cannot_invite_messaging(std::ostream &out) {
+                out << strings::colors::red << "Cannot invite messaging. You are not connected to the server"
+                    << strings::colors::def << std::endl;
+            }
+
+            void cannot_accept_messaging(std::ostream &out) {
+                out << strings::colors::red << "Cannot accept messaging. You are not connected to the server"
+                    << strings::colors::def << std::endl;
+            }
+
+            void cannot_view_users(std::ostream &out) {
+                out << strings::colors::red << "Cannot view users. You are not connected to the server"
+                    << strings::colors::def << std::endl;
+            }
+
+            void cannot_send_message(std::ostream &out) {
+                out << strings::colors::red << "Cannot send message. You are not connected to the server"
+                    << strings::colors::def << std::endl;
+            }
+        }
+
         void connection_failed(std::ostream &out, const std::string_view &ip, unsigned int port) {
             out << strings::colors::red << "Connection to server " << ip << ":" << port << " failed"
-                << strings::colors::def << std::endl;
-        }
-
-        void cannot_create_room_not_connected(std::ostream &out) {
-            out << strings::colors::red << "Cannot create room. You are not connected to the server"
-                << strings::colors::def << std::endl;
-        }
-
-        void cannot_join_room_not_connected(std::ostream &out) {
-            out << strings::colors::red << "Cannot join room. You are not connected to the server"
-                << strings::colors::def << std::endl;
-        }
-
-        void cannot_view_rooms_not_connected(std::ostream &out) {
-            out << strings::colors::red << "Cannot view rooms. You are not connected to the server"
-                << strings::colors::def << std::endl;
-        }
-
-        void cannot_invite_messaging_not_connected(std::ostream &out) {
-            out << strings::colors::red << "Cannot invite messaging. You are not connected to the server"
-                << strings::colors::def << std::endl;
-        }
-
-        void cannot_accept_messaging_not_connected(std::ostream &out) {
-            out << strings::colors::red << "Cannot accept messaging. You are not connected to the server"
-                << strings::colors::def << std::endl;
-        }
-
-        void cannot_view_users_not_connected(std::ostream &out) {
-            out << strings::colors::red << "Cannot view users. You are not connected to the server"
-                << strings::colors::def << std::endl;
-        }
-
-        void cannot_send_message_not_connected(std::ostream &out) {
-            out << strings::colors::red << "Cannot send message. You are not connected to the server"
                 << strings::colors::def << std::endl;
         }
     }

@@ -27,31 +27,31 @@ namespace states {
         }
 
         void create_room(const std::string &, const std::string &) override {
-            strings::error::cannot_create_room_not_connected(out());
+            strings::error::not_connected::cannot_create_room(out());
         }
 
         void join_room(const std::string &room_name, const std::string &password) override {
-            strings::error::cannot_join_room_not_connected(out());
+            strings::error::not_connected::cannot_join_room(out());
         }
 
         virtual void view_rooms() override {
-            strings::error::cannot_view_rooms_not_connected(out());
+            strings::error::not_connected::cannot_view_rooms(out());
         }
 
         virtual void invite_messaging(const std::string &username) override {
-            strings::error::cannot_invite_messaging_not_connected(out());
+            strings::error::not_connected::cannot_invite_messaging(out());
         }
 
         virtual void accept_messaging(const std::string &username) override {
-            strings::error::cannot_accept_messaging_not_connected(out());
+            strings::error::not_connected::cannot_accept_messaging(out());
         }
 
         virtual void view_users() override {
-            strings::error::cannot_view_users_not_connected(out());
+            strings::error::not_connected::cannot_view_users(out());
         }
 
         void send_message(const std::string &message) override {
-            strings::error::cannot_send_message_not_connected(out());
+            strings::error::not_connected::cannot_send_message(out());
         }
     };
 }
