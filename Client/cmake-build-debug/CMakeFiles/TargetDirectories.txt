@@ -1,3 +1,0 @@
-/mnt/d/University/ИТиРОД/Lab1/Client/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/mnt/d/University/ИТиРОД/Lab1/Client/cmake-build-debug/CMakeFiles/Client.dir
-/mnt/d/University/ИТиРОД/Lab1/Client/cmake-build-debug/CMakeFiles/edit_cache.dir

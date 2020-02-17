@@ -1,4 +1,0 @@
-/usr/local/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/gcc-9 -DCMAKE_CXX_COMPILER=/usr/bin/g++-9 -G "CodeBlocks - Unix Makefiles" /mnt/d/University/ИТиРОД/Lab1/Server
--- Configuring done
--- Generating done
--- Build files have been written to: /mnt/d/University/Р�РўРёР РћР”/Lab1/Server/cmake-build-debug
