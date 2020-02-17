@@ -70,19 +70,93 @@ CMakeFiles/Client.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/main.cpp.s"
 	/usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/University/ИТиРОД/Lab1/Client/main.cpp -o CMakeFiles/Client.dir/main.cpp.s
 
+CMakeFiles/Client.dir/src/client.cpp.o: CMakeFiles/Client.dir/flags.make
+CMakeFiles/Client.dir/src/client.cpp.o: ../src/client.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/University/ИТиРОД/Lab1/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Client.dir/src/client.cpp.o"
+	/usr/bin/g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/src/client.cpp.o -c /mnt/d/University/ИТиРОД/Lab1/Client/src/client.cpp
+
+CMakeFiles/Client.dir/src/client.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/src/client.cpp.i"
+	/usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/University/ИТиРОД/Lab1/Client/src/client.cpp > CMakeFiles/Client.dir/src/client.cpp.i
+
+CMakeFiles/Client.dir/src/client.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/src/client.cpp.s"
+	/usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/University/ИТиРОД/Lab1/Client/src/client.cpp -o CMakeFiles/Client.dir/src/client.cpp.s
+
+CMakeFiles/Client.dir/states/src/empty_state.cpp.o: CMakeFiles/Client.dir/flags.make
+CMakeFiles/Client.dir/states/src/empty_state.cpp.o: ../states/src/empty_state.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/University/ИТиРОД/Lab1/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Client.dir/states/src/empty_state.cpp.o"
+	/usr/bin/g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/states/src/empty_state.cpp.o -c /mnt/d/University/ИТиРОД/Lab1/Client/states/src/empty_state.cpp
+
+CMakeFiles/Client.dir/states/src/empty_state.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/states/src/empty_state.cpp.i"
+	/usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/University/ИТиРОД/Lab1/Client/states/src/empty_state.cpp > CMakeFiles/Client.dir/states/src/empty_state.cpp.i
+
+CMakeFiles/Client.dir/states/src/empty_state.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/states/src/empty_state.cpp.s"
+	/usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/University/ИТиРОД/Lab1/Client/states/src/empty_state.cpp -o CMakeFiles/Client.dir/states/src/empty_state.cpp.s
+
+CMakeFiles/Client.dir/states/src/state.cpp.o: CMakeFiles/Client.dir/flags.make
+CMakeFiles/Client.dir/states/src/state.cpp.o: ../states/src/state.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/University/ИТиРОД/Lab1/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Client.dir/states/src/state.cpp.o"
+	/usr/bin/g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/states/src/state.cpp.o -c /mnt/d/University/ИТиРОД/Lab1/Client/states/src/state.cpp
+
+CMakeFiles/Client.dir/states/src/state.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/states/src/state.cpp.i"
+	/usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/University/ИТиРОД/Lab1/Client/states/src/state.cpp > CMakeFiles/Client.dir/states/src/state.cpp.i
+
+CMakeFiles/Client.dir/states/src/state.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/states/src/state.cpp.s"
+	/usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/University/ИТиРОД/Lab1/Client/states/src/state.cpp -o CMakeFiles/Client.dir/states/src/state.cpp.s
+
+CMakeFiles/Client.dir/states/src/connected_state.cpp.o: CMakeFiles/Client.dir/flags.make
+CMakeFiles/Client.dir/states/src/connected_state.cpp.o: ../states/src/connected_state.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/University/ИТиРОД/Lab1/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Client.dir/states/src/connected_state.cpp.o"
+	/usr/bin/g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/states/src/connected_state.cpp.o -c /mnt/d/University/ИТиРОД/Lab1/Client/states/src/connected_state.cpp
+
+CMakeFiles/Client.dir/states/src/connected_state.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/states/src/connected_state.cpp.i"
+	/usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/University/ИТиРОД/Lab1/Client/states/src/connected_state.cpp > CMakeFiles/Client.dir/states/src/connected_state.cpp.i
+
+CMakeFiles/Client.dir/states/src/connected_state.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/states/src/connected_state.cpp.s"
+	/usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/University/ИТиРОД/Lab1/Client/states/src/connected_state.cpp -o CMakeFiles/Client.dir/states/src/connected_state.cpp.s
+
+CMakeFiles/Client.dir/src/socket.cpp.o: CMakeFiles/Client.dir/flags.make
+CMakeFiles/Client.dir/src/socket.cpp.o: ../src/socket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/University/ИТиРОД/Lab1/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Client.dir/src/socket.cpp.o"
+	/usr/bin/g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/src/socket.cpp.o -c /mnt/d/University/ИТиРОД/Lab1/Client/src/socket.cpp
+
+CMakeFiles/Client.dir/src/socket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/src/socket.cpp.i"
+	/usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/University/ИТиРОД/Lab1/Client/src/socket.cpp > CMakeFiles/Client.dir/src/socket.cpp.i
+
+CMakeFiles/Client.dir/src/socket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/src/socket.cpp.s"
+	/usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/University/ИТиРОД/Lab1/Client/src/socket.cpp -o CMakeFiles/Client.dir/src/socket.cpp.s
+
 # Object files for target Client
 Client_OBJECTS = \
-"CMakeFiles/Client.dir/main.cpp.o"
+"CMakeFiles/Client.dir/main.cpp.o" \
+"CMakeFiles/Client.dir/src/client.cpp.o" \
+"CMakeFiles/Client.dir/states/src/empty_state.cpp.o" \
+"CMakeFiles/Client.dir/states/src/state.cpp.o" \
+"CMakeFiles/Client.dir/states/src/connected_state.cpp.o" \
+"CMakeFiles/Client.dir/src/socket.cpp.o"
 
 # External object files for target Client
 Client_EXTERNAL_OBJECTS =
 
 Client: CMakeFiles/Client.dir/main.cpp.o
+Client: CMakeFiles/Client.dir/src/client.cpp.o
+Client: CMakeFiles/Client.dir/states/src/empty_state.cpp.o
+Client: CMakeFiles/Client.dir/states/src/state.cpp.o
+Client: CMakeFiles/Client.dir/states/src/connected_state.cpp.o
+Client: CMakeFiles/Client.dir/src/socket.cpp.o
 Client: CMakeFiles/Client.dir/build.make
-Client: /usr/lib/libboost_system.a
 Client: /usr/lib/libboost_thread.a
 Client: CMakeFiles/Client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/University/ИТиРОД/Lab1/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/University/ИТиРОД/Lab1/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

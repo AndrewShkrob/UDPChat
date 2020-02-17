@@ -11,7 +11,22 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efbe13a7-fbce-4b63-b386-633d49234b64" name="Default Changelist" comment="" />
+    <list default="true" id="efbe13a7-fbce-4b63-b386-633d49234b64" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/client.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/client.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/cmake-build-debug/CMakeFiles/Client.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/cmake-build-debug/CMakeFiles/Client.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/cmake-build-debug/CMakeFiles/Client.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/cmake-build-debug/CMakeFiles/Client.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/cmake-build-debug/CMakeFiles/Client.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/cmake-build-debug/CMakeFiles/Client.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/cmake-build-debug/CMakeFiles/Client.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/cmake-build-debug/Client.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/cmake-build-debug/Client.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/states/empty_state.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/states/empty_state.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/states/state.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/states/state.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/strings.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/strings.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +36,11 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1XGJvylvNWPr7phyKubIaukQJCP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -29,6 +48,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Client" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -54,6 +74,7 @@
       <workItem from="1580666732826" duration="5379000" />
       <workItem from="1580673808868" duration="2045000" />
       <workItem from="1580720499014" duration="44000" />
+      <workItem from="1580755200462" duration="1867000" />
     </task>
     <servers />
   </component>
@@ -65,10 +86,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="828" y="196" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1580673935943" />
-    <state x="1220" y="296" key="FileChooserDialogImpl" timestamp="1580666755622">
+    <state x="1220" y="296" key="FileChooserDialogImpl" timestamp="1580755541466">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1220" y="296" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1580666755622" />
+    <state x="1220" y="296" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1580755541466" />
     <state width="914" height="249" key="GridCell.Tab.0.bottom" timestamp="1580678528739">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

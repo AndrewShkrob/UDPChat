@@ -1,35 +1,51 @@
 #ifndef CLIENT_CLIENT_HPP
 #define CLIENT_CLIENT_HPP
 
-#include <string>
-#include <iostream>
-#include "states/state.hpp"
+#include <memory>
 #include "states/empty_state.hpp"
-#include "connection.hpp"
+#include "socket.hpp"
 
 class Client {
+    friend class states::State;
 public:
-    explicit Client(std::ostream &out) : _out(out) {
-        set_state<states::EmptyState>();
-    }
-
-    void login(const std::string &username) {
-        _current_state.login(username);
-    }
-
-    void connect(const std::string &ip, unsigned int port) {
-        _current_state.connect_server(ip, port);
-    }
+    explicit Client(std::ostream &out);
 
     template<class State>
     void set_state() {
-        _current_state = State(this, _connection, _out);
+        _current_state = std::unique_ptr<State>(new State(*this));
     }
 
-private:
+    std::ostream &out() const;
+
+    void help() const;
+
+    void login(const std::string &username);
+
+    void connect(const std::string &address, const std::string &port);
+
+    void create_room(const std::string &room_name, const std::string &password);
+
+    void join_room(const std::string &room_name, const std::string &password);
+
+    void view_rooms() const;
+
+    void invite_messaging(const std::string &username) const;
+
+    void accept_messaging(const std::string &username);
+
+    void view_users() const;
+
+    void exit();
+
+    void send_message(const std::string &message) const;
+
+    void unknown_command() const;
+
+protected:
     std::ostream &_out;
-    states::State _current_state;
-    Connection _connection;
+    std::unique_ptr<states::State> _current_state;
+    std::string _username;
+    Socket _socket;
 };
 
 #endif //CLIENT_CLIENT_HPP

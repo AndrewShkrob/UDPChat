@@ -1,14 +1,14 @@
-#ifndef CLIENT_EMPTY_STATE_HPP
-#define CLIENT_EMPTY_STATE_HPP
+#ifndef CLIENT_CONNECTED_STATE_HPP
+#define CLIENT_CONNECTED_STATE_HPP
 
 #include "state.hpp"
 
 namespace states {
-    class EmptyState : public State {
+    class ConnectedState : public State {
     public:
-        explicit EmptyState(Client &client);
+        explicit ConnectedState(Client &client);
 
-        ~EmptyState() override = default;
+        ~ConnectedState() override = default;
 
         void create_room(const std::string &, const std::string &) override;
 
@@ -28,4 +28,4 @@ namespace states {
     };
 }
 
-#endif //CLIENT_EMPTY_STATE_HPP
+#endif //CLIENT_CONNECTED_STATE_HPP

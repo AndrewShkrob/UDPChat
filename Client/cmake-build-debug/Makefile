@@ -150,6 +150,141 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/client.o: src/client.cpp.o
+
+.PHONY : src/client.o
+
+# target to build an object file
+src/client.cpp.o:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/client.cpp.o
+.PHONY : src/client.cpp.o
+
+src/client.i: src/client.cpp.i
+
+.PHONY : src/client.i
+
+# target to preprocess a source file
+src/client.cpp.i:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/client.cpp.i
+.PHONY : src/client.cpp.i
+
+src/client.s: src/client.cpp.s
+
+.PHONY : src/client.s
+
+# target to generate assembly for a file
+src/client.cpp.s:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/client.cpp.s
+.PHONY : src/client.cpp.s
+
+src/socket.o: src/socket.cpp.o
+
+.PHONY : src/socket.o
+
+# target to build an object file
+src/socket.cpp.o:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/socket.cpp.o
+.PHONY : src/socket.cpp.o
+
+src/socket.i: src/socket.cpp.i
+
+.PHONY : src/socket.i
+
+# target to preprocess a source file
+src/socket.cpp.i:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/socket.cpp.i
+.PHONY : src/socket.cpp.i
+
+src/socket.s: src/socket.cpp.s
+
+.PHONY : src/socket.s
+
+# target to generate assembly for a file
+src/socket.cpp.s:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/socket.cpp.s
+.PHONY : src/socket.cpp.s
+
+states/src/connected_state.o: states/src/connected_state.cpp.o
+
+.PHONY : states/src/connected_state.o
+
+# target to build an object file
+states/src/connected_state.cpp.o:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/states/src/connected_state.cpp.o
+.PHONY : states/src/connected_state.cpp.o
+
+states/src/connected_state.i: states/src/connected_state.cpp.i
+
+.PHONY : states/src/connected_state.i
+
+# target to preprocess a source file
+states/src/connected_state.cpp.i:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/states/src/connected_state.cpp.i
+.PHONY : states/src/connected_state.cpp.i
+
+states/src/connected_state.s: states/src/connected_state.cpp.s
+
+.PHONY : states/src/connected_state.s
+
+# target to generate assembly for a file
+states/src/connected_state.cpp.s:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/states/src/connected_state.cpp.s
+.PHONY : states/src/connected_state.cpp.s
+
+states/src/empty_state.o: states/src/empty_state.cpp.o
+
+.PHONY : states/src/empty_state.o
+
+# target to build an object file
+states/src/empty_state.cpp.o:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/states/src/empty_state.cpp.o
+.PHONY : states/src/empty_state.cpp.o
+
+states/src/empty_state.i: states/src/empty_state.cpp.i
+
+.PHONY : states/src/empty_state.i
+
+# target to preprocess a source file
+states/src/empty_state.cpp.i:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/states/src/empty_state.cpp.i
+.PHONY : states/src/empty_state.cpp.i
+
+states/src/empty_state.s: states/src/empty_state.cpp.s
+
+.PHONY : states/src/empty_state.s
+
+# target to generate assembly for a file
+states/src/empty_state.cpp.s:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/states/src/empty_state.cpp.s
+.PHONY : states/src/empty_state.cpp.s
+
+states/src/state.o: states/src/state.cpp.o
+
+.PHONY : states/src/state.o
+
+# target to build an object file
+states/src/state.cpp.o:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/states/src/state.cpp.o
+.PHONY : states/src/state.cpp.o
+
+states/src/state.i: states/src/state.cpp.i
+
+.PHONY : states/src/state.i
+
+# target to preprocess a source file
+states/src/state.cpp.i:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/states/src/state.cpp.i
+.PHONY : states/src/state.cpp.i
+
+states/src/state.s: states/src/state.cpp.s
+
+.PHONY : states/src/state.s
+
+# target to generate assembly for a file
+states/src/state.cpp.s:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/states/src/state.cpp.s
+.PHONY : states/src/state.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +297,21 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/client.o"
+	@echo "... src/client.i"
+	@echo "... src/client.s"
+	@echo "... src/socket.o"
+	@echo "... src/socket.i"
+	@echo "... src/socket.s"
+	@echo "... states/src/connected_state.o"
+	@echo "... states/src/connected_state.i"
+	@echo "... states/src/connected_state.s"
+	@echo "... states/src/empty_state.o"
+	@echo "... states/src/empty_state.i"
+	@echo "... states/src/empty_state.s"
+	@echo "... states/src/state.o"
+	@echo "... states/src/state.i"
+	@echo "... states/src/state.s"
 .PHONY : help
 
 

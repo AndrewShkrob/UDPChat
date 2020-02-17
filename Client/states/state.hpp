@@ -2,22 +2,22 @@
 #define CLIENT_STATE_HPP
 
 #include <string>
-#include <iostream>
-#include "../client.hpp"
+#include "../socket.hpp"
+
+class Client;
 
 namespace states {
     class State {
     public:
-        explicit State(Client &client, Connection &connection, std::ostream &output)
-                : _client(client),
-                  _connection(connection),
-                  _output(output) {}
+        explicit State(Client &client) : _client(client) {}
 
         virtual ~State() = default;;
 
-        virtual void login(const std::string &username) = 0;
+        virtual void help();
 
-        virtual void connect_server(const std::string &ip, unsigned int port) = 0;
+        virtual void login(const std::string &username);
+
+        virtual void connect_server(const std::string &ip, const std::string &port);
 
         virtual void create_room(const std::string &room_name, const std::string &password) = 0;
 
@@ -33,14 +33,15 @@ namespace states {
 
         virtual void send_message(const std::string &message) = 0;
 
-        std::ostream &out() const {
-            return _output;
-        }
+        virtual void exit() = 0;
+
+    protected:
+        std::string username() const;
+
+        Socket &socket() const;
 
     protected:
         Client &_client;
-        Connection &_connection;
-        std::ostream &_output;
     };
 }
 
