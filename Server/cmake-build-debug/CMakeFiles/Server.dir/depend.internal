@@ -4,3 +4,7 @@
 CMakeFiles/Server.dir/main.cpp.o
  /mnt/d/University/ИТиРОД/Lab1/Server/chat_message.hpp
  /mnt/d/University/ИТиРОД/Lab1/Server/main.cpp
+ /mnt/d/University/ИТиРОД/Lab1/Server/participant.hpp
+ /mnt/d/University/ИТиРОД/Lab1/Server/room.hpp
+ /mnt/d/University/ИТиРОД/Lab1/Server/server.hpp
+ /mnt/d/University/ИТиРОД/Lab1/Server/session.hpp

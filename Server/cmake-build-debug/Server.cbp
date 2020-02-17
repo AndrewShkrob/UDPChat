@@ -92,6 +92,18 @@
 		<Unit filename="/mnt/d/University/ИТиРОД/Lab1/Server/main.cpp">
 			<Option target="Server"/>
 		</Unit>
+		<Unit filename="/mnt/d/University/ИТиРОД/Lab1/Server/participant.hpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/mnt/d/University/ИТиРОД/Lab1/Server/room.hpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/mnt/d/University/ИТиРОД/Lab1/Server/server.hpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/mnt/d/University/ИТиРОД/Lab1/Server/session.hpp">
+			<Option target="Server"/>
+		</Unit>
 		<Unit filename="/mnt/d/University/ИТиРОД/Lab1/Server/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

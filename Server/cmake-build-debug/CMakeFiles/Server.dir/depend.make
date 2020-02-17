@@ -3,4 +3,8 @@
 
 CMakeFiles/Server.dir/main.cpp.o: ../chat_message.hpp
 CMakeFiles/Server.dir/main.cpp.o: ../main.cpp
+CMakeFiles/Server.dir/main.cpp.o: ../participant.hpp
+CMakeFiles/Server.dir/main.cpp.o: ../room.hpp
+CMakeFiles/Server.dir/main.cpp.o: ../server.hpp
+CMakeFiles/Server.dir/main.cpp.o: ../session.hpp
 

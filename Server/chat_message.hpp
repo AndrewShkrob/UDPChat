@@ -5,6 +5,8 @@
 #include <cstdlib>
 #include <cstring>
 
+#include <deque>
+
 class chat_message {
 public:
     enum {
@@ -69,5 +71,7 @@ private:
     char data_[header_length + max_body_length];
     std::size_t body_length_;
 };
+
+typedef std::deque<chat_message> message_queue;
 
 #endif // CHAT_MESSAGE_HPP
