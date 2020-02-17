@@ -1,7 +1,7 @@
 #include "../client.hpp"
 #include "../strings.hpp"
 
-Client::Client(std::ostream &out) : _out(out) {
+Client::Client(std::ostream &out) : _out(out), _socket(_out) {
     set_state<states::EmptyState>();
 }
 

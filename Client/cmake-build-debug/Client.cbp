@@ -86,6 +86,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/d/University/ИТиРОД/Lab1/Client/chat_message.hpp">
+			<Option target="Client"/>
+		</Unit>
 		<Unit filename="/mnt/d/University/ИТиРОД/Lab1/Client/client.hpp">
 			<Option target="Client"/>
 		</Unit>

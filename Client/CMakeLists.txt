@@ -8,5 +8,5 @@ set(Boost_USE_STATIC_RUNTIME OFF)
 find_package(Boost REQUIRED COMPONENTS thread)
 include_directories(${Boost_INCLUDE_DIRS})
 
-add_executable(Client main.cpp strings.hpp src/client.cpp client.hpp states/state.hpp states/empty_state.hpp states/src/empty_state.cpp states/src/state.cpp states/connected_state.hpp states/chating_state.hpp states/src/connected_state.cpp socket.hpp src/socket.cpp)
+add_executable(Client main.cpp strings.hpp src/client.cpp client.hpp states/state.hpp states/empty_state.hpp states/src/empty_state.cpp states/src/state.cpp states/connected_state.hpp states/chating_state.hpp states/src/connected_state.cpp socket.hpp src/socket.cpp chat_message.hpp)
 target_link_libraries(Client ${Boost_LIBRARIES})

@@ -35,7 +35,8 @@ void ConnectedState::view_users() {
 }
 
 void ConnectedState::send_message(const std::string &message) {
-    strings::error::not_connected::cannot_send_message(_client.out());
+    socket().send_message(message);
+//    strings::error::not_connected::cannot_send_message(_client.out());
 }
 
 void ConnectedState::exit() {
