@@ -204,6 +204,33 @@ src/socket.cpp.s:
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/socket.cpp.s
 .PHONY : src/socket.cpp.s
 
+states/src/chatting_state.o: states/src/chatting_state.cpp.o
+
+.PHONY : states/src/chatting_state.o
+
+# target to build an object file
+states/src/chatting_state.cpp.o:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/states/src/chatting_state.cpp.o
+.PHONY : states/src/chatting_state.cpp.o
+
+states/src/chatting_state.i: states/src/chatting_state.cpp.i
+
+.PHONY : states/src/chatting_state.i
+
+# target to preprocess a source file
+states/src/chatting_state.cpp.i:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/states/src/chatting_state.cpp.i
+.PHONY : states/src/chatting_state.cpp.i
+
+states/src/chatting_state.s: states/src/chatting_state.cpp.s
+
+.PHONY : states/src/chatting_state.s
+
+# target to generate assembly for a file
+states/src/chatting_state.cpp.s:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/states/src/chatting_state.cpp.s
+.PHONY : states/src/chatting_state.cpp.s
+
 states/src/connected_state.o: states/src/connected_state.cpp.o
 
 .PHONY : states/src/connected_state.o
@@ -303,6 +330,9 @@ help:
 	@echo "... src/socket.o"
 	@echo "... src/socket.i"
 	@echo "... src/socket.s"
+	@echo "... states/src/chatting_state.o"
+	@echo "... states/src/chatting_state.i"
+	@echo "... states/src/chatting_state.s"
 	@echo "... states/src/connected_state.o"
 	@echo "... states/src/connected_state.i"
 	@echo "... states/src/connected_state.s"

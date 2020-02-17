@@ -21,10 +21,21 @@ CMakeFiles/Client.dir/src/socket.cpp.o
  /mnt/d/University/ИТиРОД/Lab1/Client/chat_message.hpp
  /mnt/d/University/ИТиРОД/Lab1/Client/socket.hpp
  /mnt/d/University/ИТиРОД/Lab1/Client/src/socket.cpp
+CMakeFiles/Client.dir/states/src/chatting_state.cpp.o
+ /mnt/d/University/ИТиРОД/Lab1/Client/chat_message.hpp
+ /mnt/d/University/ИТиРОД/Lab1/Client/client.hpp
+ /mnt/d/University/ИТиРОД/Lab1/Client/socket.hpp
+ /mnt/d/University/ИТиРОД/Lab1/Client/states/chating_state.hpp
+ /mnt/d/University/ИТиРОД/Lab1/Client/states/connected_state.hpp
+ /mnt/d/University/ИТиРОД/Lab1/Client/states/empty_state.hpp
+ /mnt/d/University/ИТиРОД/Lab1/Client/states/src/chatting_state.cpp
+ /mnt/d/University/ИТиРОД/Lab1/Client/states/state.hpp
+ /mnt/d/University/ИТиРОД/Lab1/Client/strings.hpp
 CMakeFiles/Client.dir/states/src/connected_state.cpp.o
  /mnt/d/University/ИТиРОД/Lab1/Client/chat_message.hpp
  /mnt/d/University/ИТиРОД/Lab1/Client/client.hpp
  /mnt/d/University/ИТиРОД/Lab1/Client/socket.hpp
+ /mnt/d/University/ИТиРОД/Lab1/Client/states/chating_state.hpp
  /mnt/d/University/ИТиРОД/Lab1/Client/states/connected_state.hpp
  /mnt/d/University/ИТиРОД/Lab1/Client/states/empty_state.hpp
  /mnt/d/University/ИТиРОД/Lab1/Client/states/src/connected_state.cpp

@@ -22,6 +22,8 @@ public:
 
     bool join_room(const std::string &room_name, const std::string &password);
 
+    bool exit_room();
+
     std::string get_rooms();
 
     bool invite_messaging(const std::string &username);

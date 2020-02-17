@@ -43,6 +43,11 @@ namespace strings {
             "\033[0m\n";
     static constexpr std::string_view unknown_command = "\033[31mUnknown command\033[0m";
     static constexpr std::string_view exit_the_chat = "\033[35mExiting the chat. Buy.\033[0m";
+    static constexpr std::string_view exit_the_server = "\033[35mExiting the server. Buy.\033[0m";
+    static constexpr std::string_view exit_the_room = "\033[35mExiting the room. Buy.\033[0m";
+
+    static constexpr std::string_view view_users = "Users list:";
+    static constexpr std::string_view view_rooms = "Rooms list:";
 
     namespace error {
         namespace not_connected {
@@ -78,6 +83,20 @@ namespace strings {
 
             static inline void cannot_send_message(std::ostream &out) {
                 out << strings::colors::red << "Cannot send message. You are not connected to the server"
+                    << strings::colors::def << std::endl;
+            }
+        }
+
+        namespace not_chatting {
+            static inline void cannot_send_message(std::ostream &out) {
+                out << strings::colors::red << "Cannot send message. You are not in the room"
+                    << strings::colors::def << std::endl;
+            }
+        }
+
+        namespace chatting {
+            static inline void cannot_create_room(std::ostream &out) {
+                out << strings::colors::red << "Cannot create room. You are in the room now"
                     << strings::colors::def << std::endl;
             }
         }

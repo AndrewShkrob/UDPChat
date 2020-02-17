@@ -113,6 +113,9 @@
 		<Unit filename="/mnt/d/University/ИТиРОД/Lab1/Client/states/empty_state.hpp">
 			<Option target="Client"/>
 		</Unit>
+		<Unit filename="/mnt/d/University/ИТиРОД/Lab1/Client/states/src/chatting_state.cpp">
+			<Option target="Client"/>
+		</Unit>
 		<Unit filename="/mnt/d/University/ИТиРОД/Lab1/Client/states/src/connected_state.cpp">
 			<Option target="Client"/>
 		</Unit>

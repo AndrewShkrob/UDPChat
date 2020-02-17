@@ -21,9 +21,20 @@ CMakeFiles/Client.dir/src/socket.cpp.o: ../chat_message.hpp
 CMakeFiles/Client.dir/src/socket.cpp.o: ../socket.hpp
 CMakeFiles/Client.dir/src/socket.cpp.o: ../src/socket.cpp
 
+CMakeFiles/Client.dir/states/src/chatting_state.cpp.o: ../chat_message.hpp
+CMakeFiles/Client.dir/states/src/chatting_state.cpp.o: ../client.hpp
+CMakeFiles/Client.dir/states/src/chatting_state.cpp.o: ../socket.hpp
+CMakeFiles/Client.dir/states/src/chatting_state.cpp.o: ../states/chating_state.hpp
+CMakeFiles/Client.dir/states/src/chatting_state.cpp.o: ../states/connected_state.hpp
+CMakeFiles/Client.dir/states/src/chatting_state.cpp.o: ../states/empty_state.hpp
+CMakeFiles/Client.dir/states/src/chatting_state.cpp.o: ../states/src/chatting_state.cpp
+CMakeFiles/Client.dir/states/src/chatting_state.cpp.o: ../states/state.hpp
+CMakeFiles/Client.dir/states/src/chatting_state.cpp.o: ../strings.hpp
+
 CMakeFiles/Client.dir/states/src/connected_state.cpp.o: ../chat_message.hpp
 CMakeFiles/Client.dir/states/src/connected_state.cpp.o: ../client.hpp
 CMakeFiles/Client.dir/states/src/connected_state.cpp.o: ../socket.hpp
+CMakeFiles/Client.dir/states/src/connected_state.cpp.o: ../states/chating_state.hpp
 CMakeFiles/Client.dir/states/src/connected_state.cpp.o: ../states/connected_state.hpp
 CMakeFiles/Client.dir/states/src/connected_state.cpp.o: ../states/empty_state.hpp
 CMakeFiles/Client.dir/states/src/connected_state.cpp.o: ../states/src/connected_state.cpp

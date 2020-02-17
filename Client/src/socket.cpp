@@ -1,5 +1,4 @@
 #include "../socket.hpp"
-#include <iostream>
 
 using boost::thread;
 using boost::asio::ip::udp;
@@ -22,7 +21,10 @@ void Socket::connect(const std::string &ip, const std::string &port) {
 }
 
 bool Socket::disconnect() {
-    _thread->interrupt();
+    try {
+        _thread->detach();
+        _socket.close();
+    } catch (...) {}
     return true;
 }
 
@@ -31,6 +33,10 @@ bool Socket::create_room(const std::string &room_name, const std::string &passwo
 }
 
 bool Socket::join_room(const std::string &room_name, const std::string &password) {
+    return true;
+}
+
+bool Socket::exit_room() {
     return true;
 }
 

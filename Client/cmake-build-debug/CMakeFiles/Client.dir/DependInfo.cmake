@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/mnt/d/University/ИТиРОД/Lab1/Client/main.cpp" "/mnt/d/University/ИТиРОД/Lab1/Client/cmake-build-debug/CMakeFiles/Client.dir/main.cpp.o"
   "/mnt/d/University/ИТиРОД/Lab1/Client/src/client.cpp" "/mnt/d/University/ИТиРОД/Lab1/Client/cmake-build-debug/CMakeFiles/Client.dir/src/client.cpp.o"
   "/mnt/d/University/ИТиРОД/Lab1/Client/src/socket.cpp" "/mnt/d/University/ИТиРОД/Lab1/Client/cmake-build-debug/CMakeFiles/Client.dir/src/socket.cpp.o"
+  "/mnt/d/University/ИТиРОД/Lab1/Client/states/src/chatting_state.cpp" "/mnt/d/University/ИТиРОД/Lab1/Client/cmake-build-debug/CMakeFiles/Client.dir/states/src/chatting_state.cpp.o"
   "/mnt/d/University/ИТиРОД/Lab1/Client/states/src/connected_state.cpp" "/mnt/d/University/ИТиРОД/Lab1/Client/cmake-build-debug/CMakeFiles/Client.dir/states/src/connected_state.cpp.o"
   "/mnt/d/University/ИТиРОД/Lab1/Client/states/src/empty_state.cpp" "/mnt/d/University/ИТиРОД/Lab1/Client/cmake-build-debug/CMakeFiles/Client.dir/states/src/empty_state.cpp.o"
   "/mnt/d/University/ИТиРОД/Lab1/Client/states/src/state.cpp" "/mnt/d/University/ИТиРОД/Lab1/Client/cmake-build-debug/CMakeFiles/Client.dir/states/src/state.cpp.o"
