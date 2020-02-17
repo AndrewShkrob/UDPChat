@@ -35,3 +35,7 @@ std::string State::username() const {
 Socket &State::socket() const {
     return _client._socket;
 }
+
+std::ostream &State::out() const {
+    return _client.out();
+}

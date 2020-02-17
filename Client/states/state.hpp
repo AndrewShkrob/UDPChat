@@ -40,6 +40,8 @@ namespace states {
 
         Socket &socket() const;
 
+        std::ostream &out() const;
+
     protected:
         Client &_client;
     };

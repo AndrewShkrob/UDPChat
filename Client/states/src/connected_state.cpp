@@ -1,6 +1,7 @@
 #include "../connected_state.hpp"
 #include "../../client.hpp"
 #include "../../strings.hpp"
+#include "../chating_state.hpp"
 
 using namespace states;
 
@@ -15,31 +16,34 @@ void ConnectedState::create_room(const std::string &room_name, const std::string
 }
 
 void ConnectedState::join_room(const std::string &room_name, const std::string &password) {
-    strings::error::not_connected::cannot_join_room(_client.out());
+    socket().join_room(room_name, password);
+    _client.set_state<ChattingState>();
 }
 
 void ConnectedState::view_rooms() {
-    _client.out() << socket().get_rooms() << std::endl;
+    out() << strings::colors::blue << strings::view_rooms << std::endl << socket().get_rooms()
+          << strings::colors::def << std::endl;
 }
 
 void ConnectedState::invite_messaging(const std::string &username) {
-    strings::error::not_connected::cannot_invite_messaging(_client.out());
+    socket().invite_messaging(username);
 }
 
 void ConnectedState::accept_messaging(const std::string &username) {
-    strings::error::not_connected::cannot_accept_messaging(_client.out());
+    socket().accept_messaging(username);
 }
 
 void ConnectedState::view_users() {
-    strings::error::not_connected::cannot_view_users(_client.out());
+    out() << strings::colors::blue << strings::view_users << std::endl << socket().get_users()
+          << strings::colors::def << std::endl;
 }
 
 void ConnectedState::send_message(const std::string &message) {
-    socket().send_message(message);
-//    strings::error::not_connected::cannot_send_message(_client.out());
+    strings::error::not_chatting::cannot_send_message(out());
 }
 
 void ConnectedState::exit() {
-    _client.out() << strings::exit_the_chat << std::endl;
+    _client.out() << strings::exit_the_server << std::endl;
     socket().disconnect();
+    _client.set_state<EmptyState>();
 }
