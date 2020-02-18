@@ -24,7 +24,7 @@ public:
         _participants.erase(participant);
     }
 
-    void deliver(const chat_message &msg) {
+    void deliver(const ChatMessage &msg) {
         _recent_msgs.push_back(msg);
         while (_recent_msgs.size() > max_recent_msgs)
             _recent_msgs.pop_front();
@@ -46,7 +46,7 @@ private:
         max_recent_msgs = 100
     };
 
-    message_queue _recent_msgs;
+    MessageQueue _recent_msgs;
 };
 
 #endif //SERVER_ROOM_HPP

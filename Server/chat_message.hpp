@@ -1,77 +1,78 @@
-#ifndef CHAT_MESSAGE_HPP
-#define CHAT_MESSAGE_HPP
+#ifndef CLIENT_CHAT_MESSAGE_HPP
+#define CLIENT_CHAT_MESSAGE_HPP
 
-#include <cstdio>
-#include <cstdlib>
+#include <boost/array.hpp>
 #include <cstring>
-
+#include <ctime>
 #include <deque>
 
-class chat_message {
+enum class MessageType {
+    CONNECT = 0,
+    COMMAND = 1,
+    MESSAGE = 2,
+    UNKNOWN = 3
+};
+
+class ChatMessage {
 public:
-    enum {
-        header_length = 4
-    };
-    enum {
-        max_body_length = 512
-    };
+    static constexpr size_t MESSAGE_SIZE = 1025;
 
-    chat_message()
-            : body_length_(0) {
+    ChatMessage() : _type(MessageType::UNKNOWN) {}
+
+    explicit ChatMessage(const std::string &text) {
+        if (text.empty())
+            _type = MessageType::UNKNOWN;
+        else if (text.starts_with("/connect"))
+            _type = MessageType::CONNECT;
+        else if (text.starts_with('/'))
+            _type = MessageType::COMMAND;
+        else
+            _type = MessageType::MESSAGE;
+        _data[0] = static_cast<char>(_type);
+        memcpy(_data.data() + 1, text.data(), sizeof(char) * std::min(MESSAGE_SIZE - 1, text.size()));
     }
 
-    const char *data() const {
-        return data_;
-    }
-
-    char *data() {
-        return data_;
-    }
-
-    std::size_t length() const {
-        return header_length + body_length_;
-    }
-
-    const char *body() const {
-        return data_ + header_length;
-    }
-
-    char *body() {
-        return data_ + header_length;
-    }
-
-    std::size_t body_length() const {
-        return body_length_;
-    }
-
-    void body_length(std::size_t new_length) {
-        body_length_ = new_length;
-        if (body_length_ > max_body_length)
-            body_length_ = max_body_length;
-    }
-
-    bool decode_header() {
-        char header[header_length + 1] = "";
-        std::strncat(header, data_, header_length);
-        body_length_ = std::atoi(header);
-        if (body_length_ > max_body_length) {
-            body_length_ = 0;
-            return false;
+    void decode() {
+        switch (_data[0]) {
+            case 0:
+                _type = MessageType::CONNECT;
+                return;
+            case 1:
+                _type = MessageType::COMMAND;
+                return;
+            case 2:
+                _type = MessageType::MESSAGE;
+                return;
+            default:
+                _type = MessageType::UNKNOWN;
+                return;
         }
-        return true;
     }
 
-    void encode_header() {
-        char header[header_length + 1] = "";
-        std::sprintf(header, "%4d", static_cast<int>(body_length_));
-        std::memcpy(data_, header, header_length);
+    [[nodiscard]] MessageType get_type() const {
+        return _type;
+    }
+
+    boost::array<char, MESSAGE_SIZE> &get_raw_data() {
+        return _data;
+    }
+
+    [[nodiscard]] std::string get_text() const {
+        if (_type == MessageType::UNKNOWN) {
+            throw;
+        }
+        std::string ret;
+        for (size_t i = 1; i < MESSAGE_SIZE && _data[i] != 0; ++i) {
+            ret.push_back(_data[i]);
+        }
+        return ret;
     }
 
 private:
-    char data_[header_length + max_body_length];
-    std::size_t body_length_;
+    MessageType _type;
+    boost::array<char, MESSAGE_SIZE> _data{0};
 };
 
-typedef std::deque<chat_message> message_queue;
+using MessageQueue = std::deque<ChatMessage>;
 
-#endif // CHAT_MESSAGE_HPP
+#endif //CLIENT_CHAT_MESSAGE_HPP
