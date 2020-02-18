@@ -2,6 +2,7 @@
 #include "../../client.hpp"
 #include "../../strings.hpp"
 #include "../connected_state.hpp"
+#include "../chating_state.hpp"
 
 using namespace states;
 
@@ -16,16 +17,16 @@ void State::login(const std::string &username) {
 }
 
 void State::connect_server(const std::string &ip, const std::string &port) {
-    auto handler = [&](bool connected) -> void {
+    auto handler = [&](bool connected, const std::string &message) -> void {
         if (connected) {
             strings::success::connected_to_server(_client.out(), ip, port);
             _client.set_state<ConnectedState>();
         } else {
-            strings::error::connection_failed(_client.out(), ip, port);
+            strings::error::connection_failed(_client.out(), ip, port, message);
         }
     };
-    socket().connect(ip, port);
-    handler(true);
+    const auto &[result, message] = socket().connect(ip, port);
+    handler(result, message);
 }
 
 std::string State::username() const {

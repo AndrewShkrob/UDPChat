@@ -101,13 +101,16 @@ namespace strings {
             }
         }
 
-        static inline void connection_failed(std::ostream &out, const std::string_view &ip, const std::string &port) {
-            out << strings::colors::red << "Connection to server " << ip << ":" << port << " failed"
+        static inline void
+        connection_failed(std::ostream &out, const std::string_view &ip, const std::string_view &port,
+                          const std::string_view &message) {
+            out << strings::colors::red << "Connection to server " << ip << ":" << port << " failed. " << message
                 << strings::colors::def << std::endl;
         }
 
-        static inline void room_creation_failed(std::ostream &out, const std::string_view &room_name) {
-            out << strings::colors::red << "Something went wrong while creating room " << room_name
+        static inline void
+        room_creation_failed(std::ostream &out, const std::string_view &room_name, const std::string_view &message) {
+            out << strings::colors::red << "Something went wrong while creating room " << room_name << ". " << message
                 << strings::colors::def << std::endl;
         }
     }

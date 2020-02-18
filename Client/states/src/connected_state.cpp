@@ -8,10 +8,11 @@ using namespace states;
 ConnectedState::ConnectedState(Client &client) : State(client) {}
 
 void ConnectedState::create_room(const std::string &room_name, const std::string &password) {
-    if (socket().create_room(room_name, password)) {
+    const auto &[result, message] = socket().create_room(room_name, password);
+    if (result) {
         strings::success::room_created(_client.out(), room_name);
     } else {
-        strings::error::room_creation_failed(_client.out(), room_name);
+        strings::error::room_creation_failed(_client.out(), room_name, message);
     }
 }
 

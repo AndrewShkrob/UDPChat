@@ -28,11 +28,24 @@ public:
         else
             _type = MessageType::MESSAGE;
         _data[0] = static_cast<char>(_type);
-        memcpy(_data.data(), text.data(), sizeof(char) * std::min(MESSAGE_SIZE - 1, text.size()));
+        memcpy(_data.data() + 1, text.data(), sizeof(char) * std::min(MESSAGE_SIZE - 1, text.size()));
     }
 
     void decode() {
-        _type = static_cast<MessageType>(_data[0]);
+        switch (_data[0]) {
+            case 0:
+                _type = MessageType::CONNECT;
+                return;
+            case 1:
+                _type = MessageType::COMMAND;
+                return;
+            case 2:
+                _type = MessageType::MESSAGE;
+                return;
+            default:
+                _type = MessageType::UNKNOWN;
+                return;
+        }
     }
 
     [[nodiscard]] MessageType get_type() const {
@@ -56,7 +69,7 @@ public:
 
 private:
     MessageType _type;
-    boost::array<char, MESSAGE_SIZE> _data;
+    boost::array<char, MESSAGE_SIZE> _data{0};
 };
 
 #endif //CLIENT_CHAT_MESSAGE_HPP

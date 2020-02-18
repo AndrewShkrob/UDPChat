@@ -14,11 +14,11 @@ public:
 
     ~Socket();
 
-    void connect(const std::string &ip, const std::string &port);
+    std::pair<bool, std::string> connect(const std::string &ip, const std::string &port);
 
     bool disconnect();
 
-    bool create_room(const std::string &room_name, const std::string &password);
+    std::pair<bool, std::string> create_room(const std::string &room_name, const std::string &password);
 
     bool join_room(const std::string &room_name, const std::string &password);
 
@@ -37,7 +37,7 @@ public:
     void set_username(std::string username);
 
 protected:
-    void handle_connect();
+    std::pair<bool, std::string> handle_connect();
 
     void handle_send(ChatMessage &msg,
                      const boost::system::error_code & /*error*/,
