@@ -113,6 +113,12 @@ namespace strings {
             out << strings::colors::red << "Something went wrong while creating room " << room_name << ". " << message
                 << strings::colors::def << std::endl;
         }
+
+        static inline void
+        room_joining_failed(std::ostream &out, const std::string_view &room_name, const std::string_view &message) {
+            out << strings::colors::red << "Something went wrong while joining room " << room_name << ". " << message
+                << strings::colors::def << std::endl;
+        }
     }
 
     namespace success {
@@ -128,6 +134,11 @@ namespace strings {
 
         static inline void room_created(std::ostream &out, const std::string_view &room_name) {
             out << strings::colors::yellow << "Successfully created room " << room_name << strings::colors::def
+                << std::endl;
+        }
+
+        static inline void joined_room(std::ostream &out, const std::string_view &room_name) {
+            out << strings::colors::yellow << "Successfully joined room " << room_name << strings::colors::def
                 << std::endl;
         }
     }

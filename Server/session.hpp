@@ -21,6 +21,7 @@ public:
         _write_msgs.push_back(msg);
         if (!_write_msgs.empty()) {
             send_message(_write_msgs.front());
+            _write_msgs.pop_front();
         }
     }
 
@@ -49,8 +50,6 @@ private:
 
     void handle_send(ChatMessage, const boost::system::error_code &error,
                      std::size_t /*bytes_transferred*/) {
-        if (!error)
-            _write_msgs.pop_front();
     }
 
     boost::asio::ip::udp::socket &_server_socket;

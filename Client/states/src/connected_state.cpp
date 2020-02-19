@@ -17,8 +17,13 @@ void ConnectedState::create_room(const std::string &room_name, const std::string
 }
 
 void ConnectedState::join_room(const std::string &room_name, const std::string &password) {
-    socket().join_room(room_name, password);
-    _client.set_state<ChattingState>();
+    const auto &[result, message] = socket().join_room(room_name, password);
+    if (result) {
+        strings::success::joined_room(_client.out(), room_name);
+        _client.set_state<ChattingState>();
+    } else {
+        strings::error::room_joining_failed(_client.out(), room_name, message);
+    }
 }
 
 void ConnectedState::view_rooms() {

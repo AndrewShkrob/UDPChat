@@ -20,7 +20,7 @@ public:
 
     std::pair<bool, std::string> create_room(const std::string &room_name, const std::string &password);
 
-    bool join_room(const std::string &room_name, const std::string &password);
+    std::pair<bool, std::string> join_room(const std::string &room_name, const std::string &password);
 
     bool exit_room();
 
@@ -35,6 +35,8 @@ public:
     bool send_message(const std::string &message);
 
     void set_username(std::string username);
+
+    void start_chatting();
 
 protected:
     std::pair<bool, std::string> handle_connect();

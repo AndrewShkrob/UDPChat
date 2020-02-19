@@ -16,8 +16,6 @@ public:
 
     void join(const participant_ptr &participant) {
         _participants.insert(participant);
-        for (auto msg: _recent_msgs)
-            participant->deliver(msg);
     }
 
     void leave(const participant_ptr &participant) {
@@ -31,6 +29,27 @@ public:
 
         for (const auto &participant: _participants)
             participant->deliver(msg);
+    }
+
+    void deliver_first(const participant_ptr &participant) {
+        for (auto msg: _recent_msgs)
+            participant->deliver(msg);
+    }
+
+    [[nodiscard]] std::string get_name() const {
+        return _name;
+    }
+
+    [[nodiscard]] bool is_public() const {
+        return _public;
+    }
+
+    [[nodiscard]] bool is_locked() const {
+        return _locked_with_password;
+    }
+
+    bool validate_password(const std::string &password) const {
+        return password == _password;
     }
 
 private:

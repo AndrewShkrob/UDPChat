@@ -18,8 +18,6 @@ std::pair<bool, std::string> Socket::connect(const std::string &ip, const std::s
     const auto &[result, message] = handle_connect();
     if (!result)
         return {result, message};
-//    start_receive();
-//    _thread = std::make_unique<boost::thread>(boost::bind(&boost::asio::io_service::run, &_io_service));
     return {true, ""};
 }
 
@@ -45,19 +43,39 @@ std::pair<bool, std::string> Socket::create_room(const std::string &room_name, c
         return {true, ""};
 }
 
-bool Socket::join_room(const std::string &room_name, const std::string &password) {
-    return true;
+std::pair<bool, std::string> Socket::join_room(const std::string &room_name, const std::string &password) {
+    ChatMessage query("/join_room " + room_name + " " + password);
+    _socket.send_to(boost::asio::buffer(query.get_raw_data()), _receiver_endpoint);
+    _socket.receive_from(boost::asio::buffer(query.get_raw_data()), _receiver_endpoint);
+    query.decode();
+    std::string data = query.get_text();
+    if (query.get_type() == MessageType::UNKNOWN)
+        return {false, ""};
+    if (data != "Ok")
+        return {false, data};
+    else
+        return {true, ""};
 }
 
 bool Socket::exit_room() {
+    try {
+        _thread->detach();
+    } catch (...) {}
+    ChatMessage query("/exit_room");
+    _socket.send_to(boost::asio::buffer(query.get_raw_data()), _receiver_endpoint);
     return true;
 }
 
 std::string Socket::get_rooms() {
-    return "abacaba (locked)\nasd2345";
+    ChatMessage query("/rooms");
+    _socket.send_to(boost::asio::buffer(query.get_raw_data()), _receiver_endpoint);
+    _socket.receive_from(boost::asio::buffer(query.get_raw_data()), _receiver_endpoint);
+    return query.get_text();
 }
 
 bool Socket::invite_messaging(const std::string &username) {
+    ChatMessage query("/invite_messaging " + username);
+    _socket.send_to(boost::asio::buffer(query.get_raw_data()), _receiver_endpoint);
     return true;
 }
 
@@ -120,4 +138,9 @@ void Socket::handle_receive(const boost::system::error_code &error,
         _out << _chat_message.get_text() << '\n';
     }
     start_receive();
+}
+
+void Socket::start_chatting() {
+    start_receive();
+    _thread = std::make_unique<boost::thread>(boost::bind(&boost::asio::io_service::run, &_io_service));
 }
