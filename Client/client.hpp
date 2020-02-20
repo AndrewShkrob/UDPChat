@@ -31,7 +31,9 @@ public:
 
     void invite_messaging(const std::string &username) const;
 
-    void accept_messaging(const std::string &username);
+    void accept_messaging(const std::string &username) const;
+
+    void reject_messaging(const std::string &username) const;
 
     void view_users() const;
 

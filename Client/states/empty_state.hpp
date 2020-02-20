@@ -20,6 +20,8 @@ namespace states {
 
         void accept_messaging(const std::string &username) override;
 
+        void reject_messaging(const std::string &username) override;
+
         void view_users() override;
 
         void send_message(const std::string &message) override;

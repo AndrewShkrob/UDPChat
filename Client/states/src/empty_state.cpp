@@ -26,6 +26,10 @@ void EmptyState::accept_messaging(const std::string &username) {
     strings::error::not_connected::cannot_accept_messaging(_client.out());
 }
 
+void EmptyState::reject_messaging(const std::string &username) {
+
+}
+
 void EmptyState::view_users() {
     strings::error::not_connected::cannot_view_users(_client.out());
 }

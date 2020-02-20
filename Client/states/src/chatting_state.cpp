@@ -30,21 +30,22 @@ void ChattingState::accept_messaging(const std::string &username) {
 //    socket().accept_messaging(username);
 }
 
+void ChattingState::reject_messaging(const std::string &username) {
+
+}
+
 void ChattingState::view_users() {
 //    out() << strings::colors::blue << strings::view_users << std::endl << socket().get_rooms()
 //          << strings::colors::def << std::endl;
 }
 
 void ChattingState::send_message(const std::string &message) {
-    // remove message from console
-    std::string remove_mask("\b \b", message.size());
-    out() << remove_mask;
     // send message
     socket().send_message(message);
 }
 
 void ChattingState::exit() {
-    _client.out() << strings::exit_the_server << std::endl;
+    _client.out() << strings::exit_the_room << std::endl;
     socket().exit_room();
     _client.set_state<ConnectedState>();
 }

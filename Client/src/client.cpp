@@ -37,8 +37,12 @@ void Client::invite_messaging(const std::string &username) const {
     _current_state->invite_messaging(username);
 }
 
-void Client::accept_messaging(const std::string &username) {
+void Client::accept_messaging(const std::string &username) const {
     _current_state->accept_messaging(username);
+}
+
+void Client::reject_messaging(const std::string &username) const {
+    _current_state->reject_messaging(username);
 }
 
 void Client::view_users() const {

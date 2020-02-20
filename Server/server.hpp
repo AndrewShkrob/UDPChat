@@ -104,7 +104,15 @@ protected:
                 session->get_room()->deliver_first(session);
             }
         } else if (command.starts_with("/invite_messaging")) {
-            invite_messaging();
+            auto result = invite_messaging(username);
+            if (result == "Bad")
+                session->deliver(ChatMessage("Bad"));
+        } else if (command.starts_with("/accept_messaging")) {
+            auto result = accept_messaging(username);
+            session->deliver(ChatMessage(result));
+        } else if (command.starts_with("/reject_messaging")) {
+            auto result = reject_messaging(username);
+            session->deliver(ChatMessage(result));
         }
     }
 
@@ -119,7 +127,8 @@ protected:
     std::string get_rooms() {
         std::string rooms;
         for (const auto &[room_name, room] : _rooms)
-            rooms += room_name + (!room->is_locked() ? "" : " (locked)") + "\n";
+            if (room->is_public())
+                rooms += room_name + (!room->is_locked() ? "" : " (locked)") + "\n";
         return rooms;
     }
 
@@ -167,7 +176,7 @@ protected:
                   << std::endl;
     }
 
-    void invite_messaging(const std::string &username) {
+    std::string invite_messaging(const std::string &username) {
         std::istringstream is(_chat_message.get_text());
         std::string command;
         std::string invited_username;
@@ -181,13 +190,83 @@ protected:
                 break;
             }
         if (!user_exists)
-            return;
-        _invites_from_to.emplace(_remote_endpoint, invited_endpoint);
-        _invites_to_from.emplace(invited_endpoint, _remote_endpoint);
+            return "Bad";
+        _invites_from_to.emplace(_connected_users.find(_remote_endpoint)->first, invited_endpoint);
         _connected_users[invited_endpoint]->deliver(ChatMessage(
                 "\033[32m[INFO] User " + username + " invites you to private chat.\033[0m"));
         std::cout << "[SERVER] Client \"" << username << "\" invites \"" << invited_username << "\" to private chat"
                   << std::endl;
+        return "";
+    }
+
+    std::string accept_messaging(const std::string &username) {
+        std::istringstream is(_chat_message.get_text());
+        std::string command;
+        std::string invite_from_username;
+        is >> command >> invite_from_username;
+        bool user_exists = false;
+        EndpointRef invited_endpoint = _remote_endpoint;
+        std::shared_ptr<Session> invited_user_session;
+        for (const auto &[endp, session] : _connected_users)
+            if (session->get_username() == invite_from_username) {
+                user_exists = true;
+                invited_endpoint = endp;
+                invited_user_session = session;
+                break;
+            }
+        if (!user_exists)
+            return "Bad";
+        auto user_invites = _invites_from_to.find(invited_endpoint);
+        if (user_invites == std::end(_invites_from_to))
+            return "Bad";
+        EndpointRef from = user_invites->first;
+        EndpointRef to = user_invites->second;
+        if (to != _remote_endpoint)
+            return "Bad";
+
+        // generate private room
+        std::string room_name = "Chat_" + invite_from_username + "_" + username;
+        std::string password = "private";
+        _rooms[room_name] = std::make_shared<Room>(room_name, password, false);
+        _connected_users[from]->set_room(_rooms[room_name]);
+        _connected_users[to]->set_room(_rooms[room_name]);
+        _rooms[room_name]->join(_connected_users[from]);
+        _rooms[room_name]->join(_connected_users[to]);
+
+        _connected_users[from]->deliver(ChatMessage("Ok"));
+
+        _invites_from_to.erase(user_invites);
+
+        return "Ok";
+    }
+
+    std::string reject_messaging(const std::string &username) {
+        std::istringstream is(_chat_message.get_text());
+        std::string command;
+        std::string invite_from_username;
+        is >> command >> invite_from_username;
+        bool user_exists = false;
+        EndpointRef invited_endpoint = _remote_endpoint;
+        std::shared_ptr<Session> invited_user_session;
+        for (const auto &[endp, session] : _connected_users)
+            if (session->get_username() == invite_from_username) {
+                user_exists = true;
+                invited_endpoint = endp;
+                invited_user_session = session;
+                break;
+            }
+        if (!user_exists)
+            return "Bad";
+        auto user_invites = _invites_from_to.find(invited_endpoint);
+        if (user_invites == std::end(_invites_from_to))
+            return "Bad";
+        EndpointRef from = user_invites->first;
+        EndpointRef to = user_invites->second;
+        if (to != _remote_endpoint)
+            return "Bad";
+        _connected_users[from]->deliver(ChatMessage("Bad"));
+        _invites_from_to.erase(from);
+        return "Ok";
     }
 
 private:
@@ -200,8 +279,7 @@ private:
     Connections _connections;
     std::map<EndpointRef, std::shared_ptr<Session>> _connected_users;
     std::unordered_map<std::string, std::shared_ptr<Room>> _rooms;
-    std::multimap<EndpointRef, EndpointRef> _invites_from_to;
-    std::multimap<EndpointRef, EndpointRef> _invites_to_from;
+    std::map<EndpointRef, EndpointRef> _invites_from_to;
 };
 
 #endif //SERVER_SERVER_HPP

@@ -29,6 +29,8 @@ namespace states {
 
         virtual void accept_messaging(const std::string &username) = 0;
 
+        virtual void reject_messaging(const std::string &username) = 0;
+
         virtual void view_users() = 0;
 
         virtual void send_message(const std::string &message) = 0;

@@ -76,11 +76,31 @@ std::string Socket::get_rooms() {
 bool Socket::invite_messaging(const std::string &username) {
     ChatMessage query("/invite_messaging " + username);
     _socket.send_to(boost::asio::buffer(query.get_raw_data()), _receiver_endpoint);
-    return true;
+    _socket.receive_from(boost::asio::buffer(query.get_raw_data()), _receiver_endpoint);
+    query.decode();
+    if (query.get_type() == MessageType::UNKNOWN)
+        return false;
+    return query.get_text() == "Ok";
 }
 
 bool Socket::accept_messaging(const std::string &username) {
-    return true;
+    ChatMessage query("/accept_messaging " + username);
+    _socket.send_to(boost::asio::buffer(query.get_raw_data()), _receiver_endpoint);
+    _socket.receive_from(boost::asio::buffer(query.get_raw_data()), _receiver_endpoint);
+    query.decode();
+    if (query.get_type() == MessageType::UNKNOWN)
+        return false;
+    return query.get_text() == "Ok";
+}
+
+bool Socket::reject_messaging(const std::string &username) {
+    ChatMessage query("/reject_messaging " + username);
+    _socket.send_to(boost::asio::buffer(query.get_raw_data()), _receiver_endpoint);
+    _socket.receive_from(boost::asio::buffer(query.get_raw_data()), _receiver_endpoint);
+    query.decode();
+    if (query.get_type() == MessageType::UNKNOWN)
+        return false;
+    return query.get_text() == "Ok";
 }
 
 std::string Socket::get_users() {

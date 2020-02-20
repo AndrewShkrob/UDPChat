@@ -30,6 +30,8 @@ public:
 
     bool accept_messaging(const std::string &username);
 
+    bool reject_messaging(const std::string &username);
+
     std::string get_users();
 
     bool send_message(const std::string &message);

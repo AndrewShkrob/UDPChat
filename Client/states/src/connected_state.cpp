@@ -32,11 +32,38 @@ void ConnectedState::view_rooms() {
 }
 
 void ConnectedState::invite_messaging(const std::string &username) {
-    socket().invite_messaging(username);
+    out() << strings::colors::cyan << "Sending invitation and waiting for the answer..." << strings::colors::def
+          << std::endl;
+    bool result = socket().invite_messaging(username);
+    if (result) {
+        out() << strings::colors::cyan << "You are connected to private room" << strings::colors::def << std::endl;
+        _client.set_state<ChattingState>();
+    } else {
+        out() << strings::colors::red << "Bad request" << strings::colors::def << std::endl;
+    }
 }
 
 void ConnectedState::accept_messaging(const std::string &username) {
-    socket().accept_messaging(username);
+    out() << strings::colors::cyan << "Accepting invitation..." << strings::colors::def
+          << std::endl;
+    bool result = socket().accept_messaging(username);
+    if (result) {
+        out() << strings::colors::cyan << "You are connected to private room" << strings::colors::def << std::endl;
+        _client.set_state<ChattingState>();
+    } else {
+        out() << strings::colors::red << "Bad request" << strings::colors::def << std::endl;
+    }
+}
+
+void ConnectedState::reject_messaging(const std::string &username) {
+    out() << strings::colors::cyan << "Rejecting invitation..." << strings::colors::def
+          << std::endl;
+    bool result = socket().reject_messaging(username);
+    if (result) {
+        out() << strings::colors::green << "Rejected" << strings::colors::def << std::endl;
+    } else {
+        out() << strings::colors::red << "Bad request" << strings::colors::def << std::endl;
+    }
 }
 
 void ConnectedState::view_users() {

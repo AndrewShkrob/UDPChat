@@ -14,6 +14,7 @@ enum class QueryType {
     ROOMS,
     INVITE_MESSAGING,
     ACCEPT_MESSAGING,
+    REJECT_MESSAGING,
     USERS,
     EXIT,
     MESSAGE,
@@ -47,8 +48,13 @@ public:
                 break;
             case QueryType::INVITE_MESSAGING:
                 client.invite_messaging(param1);
+                break;
             case QueryType::ACCEPT_MESSAGING:
                 client.accept_messaging(param1);
+                break;
+            case QueryType::REJECT_MESSAGING:
+                client.reject_messaging(param1);
+                break;
             case QueryType::USERS:
                 client.view_users();
                 break;
@@ -109,6 +115,9 @@ std::istream &operator>>(std::istream &is, Query &query) {
         query.param1 = param1;
     } else if (command == "/accept_messaging") {
         query._type = QueryType::ACCEPT_MESSAGING;
+        query.param1 = param1;
+    } else if (command == "/reject_messaging") {
+        query._type = QueryType::REJECT_MESSAGING;
         query.param1 = param1;
     } else if (command == "/users")
         query._type = QueryType::USERS;
